@@ -16,6 +16,10 @@ class CustomerController extends Controller
      */
     public function index()
     {
+        // $getTest = Customer::select('id', 'name', 'kana', 'tel')->get(50);
+        // $getPaginate = Customer::select('id', 'name', 'kana', 'tel')->paginate(50);
+        // dd($getTest, $getPaginate);
+
         return Inertia::render('Customers/index', [
             'customers' => Customer::select('id', 'name', 'kana', 'tel')->paginate(50),
         ]);
